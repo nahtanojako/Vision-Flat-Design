@@ -1,0 +1,32 @@
+.form-group
+  width: 100%
+  margin-bottom: 1rem
+  position: relative
+
+  .icon-wrap
+    +center(y)
+    right: 1px
+    background: $gray-5
+    width: 2.8rem
+    height: 2.4rem
+    +transition(fast)
+    i
+      +center
+
+.form-control
+  width: 100%
+  padding: 0.7rem 1rem
+  font-family: $sans-serif
+  border: 1px solid $gray-5
+  border-left: 7px solid $gray-5
+  +transition(fast)
+
+  &:focus
+    outline: none
+    border-color: $primary
+  &:focus ~ .icon-wrap
+    background: $primary 
+
+
+textarea
+  resize: vertical

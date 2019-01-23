@@ -1,0 +1,189 @@
+// -- TABLE OF CONTENTS -- //
+// 1. Media Queries
+// 2. Absolute Centering
+// 3. Clearfix
+// 4. Padding and Margin
+// 5. Animation
+// 6. Transition
+// 7. Transform
+// 8. Font-family
+// 9. Background Overlay
+// 10. Pseudo elements (::before & ::after) must styles
+// 11. Flex-box
+// 12. Circle
+
+// 1. Media Queries =================================
+=bp($point)
+  @if $point == 'xl'
+    @media (min-width: $bp-xl)
+      @content
+  @else if $point == 'lg'
+    @media (min-width: $bp-lg)
+      @content
+  @else if $point == 'md'
+    @media (min-width: $bp-md)
+      @content
+  @else if $point == 'sm'
+    @media (min-width: $bp-sm)
+      @content
+  @else if $point == 'xs'
+    @media (max-width: $bp-xs)
+      @content
+
+// 2.Absolute Centering ============================
+=center($axis: "both")
+  position: absolute
+  @if $axis == 'y'
+    top: 50%
+    transform: translateY(-50%)
+    
+  @if $axis == 'x'
+    left: 50%
+    transform: translateX(-50%)
+    
+  @if $axis == 'both'
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+// 3. Clearing Float / Clearfix =====================
+=clear-fix
+  *zoom: 1
+  &::before,
+  &::after
+    content: ''
+    display: table
+  &::after
+    clear: both
+
+// 4. Padding & Margin ==============================
+=padding($top, $right, $bottom, $left)
+  padding-top: $top
+  padding-right: $right
+  padding-bottom: $bottom
+  padding-left: $left
+
+=margin($top, $right, $bottom, $left)
+  margin-top: $top
+  margin-right: $right
+  margin-bottom: $bottom
+  margin-left: $left
+
+// 5. Animations ===================================
+=keyframes($animation-name)
+  @-webkit-keyframes #{$animation-name}
+    @content
+  @-moz-keyframes #{$animation-name}
+    @content
+  @-ms-keyframes #{$animation-name}
+    @content
+  @-o-keyframes #{$animation-name}
+    @content
+  @keyframes #{$animation-name}
+    @content
+
+=animation($str)
+  -webkit-animation: #{str}
+  -moz-animation: #{str}
+  -ms-animation: #{str}
+  -o-animation: #{str}
+  animation: #{str}
+
+// 6. Transitions ===================================
+=transition($prop)
+  @if $prop == 'slow'
+    -webkit-transition: $slow
+    -moz-transition: $slow
+    -ms-transition: $slow
+    -o-transition: $slow
+    transition: $slow
+  @if $prop == 'normal'
+    -webkit-transition: $normal
+    -moz-transition: $normal
+    -ms-transition: $normal
+    -o-transition: $normal
+    transition: $normal
+  @if $prop == 'fast'
+    -webkit-transition: $fast
+    -moz-transition: $fast
+    -ms-transition: $fast
+    -o-transition: $fast
+    transition: $fast
+
+// 7. Transform =====================================
+=transform($prop...)
+  -webkit-transform: $prop
+  -moz-transform: $prop
+  -ms-transform: $prop
+  -o-transform: $prop
+  transform: $prop
+
+// 8. Font-family ===================================
+=font-family($style)
+  @if $style == 'sans-serif'
+    font-family: $sans-serif
+  @if $style == 'serif'
+    font-family: $serif
+  @if $style == 'cursive'
+    font-family: $cursive
+
+// 9. Background Overlay ============================
+=background($overlay, $name)
+  @if $overlay == 'primary-overlay'
+    background-image: $primary-overlay, url(../img/#{$name}.jpg)
+  @if $overlay == 'black-overlay'
+    background-image: $black-overlay, url(../img/#{$name}.jpg)
+  @if $overlay == 'white-overlay'
+    background-image: $white-overlay, url(../img/#{$name}.jpg)
+  @if $overlay == 'none'
+    background-image: url(../img/#{$name}.jpg)
+  background-repeat: no-repeat
+  background-position: center center
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -ms-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+
+// 10. ::before and ::after must styles ===========
+=pseudo
+  content: ''
+  position: absolute
+  display: block
+
+// 11. Flexbox
+=flex($dir, $x, $y)
+  display: flex
+  display: -o-flexbox
+  display: -ms-flexbox
+  display: -moz-flexbox
+  display: -webkit-flexbox
+  flex-wrap: wrap
+  -o-flex-wrap: wrap
+  -ms-flex-wrap: wrap
+  -moz-flex-wrap: wrap
+  -webkit-flex-wrap: wrap
+  @if $dir == '#{$dir}'
+    flex-direction: #{$dir}
+    -o-flex-direction: #{$dir}
+    -ms-flex-direction: #{$dir}
+    -moz-flex-direction: #{$dir}
+    -webkit-flex-direction: #{$dir}
+  @if $x == '#{$x}'
+    justify-content: #{$x}
+    -o-justify-content: #{$x}
+    -ms-justify-content: #{$x}
+    -moz-justify-content: #{$x}
+    -webkit-justify-content: #{$x}
+  @if $y == '#{$y}'
+    align-items: #{$y}
+    -o-align-items: #{$y}
+    -ms-align-items: #{$y}
+    -moz-align-items: #{$y}
+    -webkit-align-items: #{$y}
+
+=circle($size)
+  width: $size
+  height: $size
+  border-radius: 50%
+

@@ -1,0 +1,48 @@
+#team
+  .block
+    +flex(row, space-between, center)
+    overflow: hidden
+    margin: 0 auto 2rem auto
+    max-width: 400px
+
+    .block-img
+      flex-basis: 80%
+      background: $gray
+
+    .social-m
+      background: $secondary
+      flex-basis: 20%
+      .social-list
+        +flex(column, center, center)
+        li
+          height: calc(320px/4)
+          position: relative
+          +bp(lg)
+            height: calc(232px/4)
+          +bp(xl)
+            height: calc(280px/4)
+
+          a
+            +center
+            color: $gray-6
+            font-size: 1.8rem
+            display: block
+            +bp(lg)
+              font-size: 1.3rem
+
+            &.active
+              color: $primary
+            &:hover
+              color: $white
+
+    .block-footer
+      flex-basis: 100%
+      background: $primary
+      text-align: center
+      padding: 1rem 2rem
+      +flex(row, space-between, center)
+      .name
+        font-weight: 700
+        font-size: 1.5rem
+        +bp(lg)
+          font-size: 1.2rem

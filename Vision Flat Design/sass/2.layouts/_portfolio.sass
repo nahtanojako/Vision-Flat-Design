@@ -1,0 +1,61 @@
+#portfolio
+  background: $white
+  .p1,.p2,.p3,.p4,.p5,.p6,.p7,.p8
+    position: relative
+    margin-bottom: 1rem
+    border: 5px solid $gray
+    +transition(fast)
+    &:hover
+      border-color: $primary
+    +bp(md)
+      margin-bottom: 0
+    &:hover .icon-wrap
+      opacity: 1
+
+  .icon-wrap
+    position: absolute
+    background: rgba($primary, 0.5)
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    opacity: 0
+    +transition(fast)
+    a
+      +center
+      border: 1px solid $white
+      +circle(4rem)
+      &:hover
+        background: $white
+      &:hover i
+        color: $primary
+    i
+      +center
+      font-size: 1.5rem
+      color: $white
+      
+
+  +bp(md)
+    .grid
+      display: grid
+      grid-template-columns: repeat(12, 1fr)
+      grid-template-rows: repeat(3, auto)
+      grid-gap: 1rem
+      .p1,.p2,.p3,.p4,.p5,.p6,.p7,.p8
+        background-color: $black
+      .p1
+        grid-area: 1/1/2/7
+      .p2
+        grid-area: 1/7/2/10
+      .p3
+        grid-area: 1/10/2/13
+      .p4
+        grid-area: 2/1/3/7
+      .p5
+        grid-area: 2/7/3/13
+      .p6
+        grid-area: 3/1/4/5
+      .p7
+        grid-area: 3/5/4/9
+      .p8
+        grid-area: 3/9/4/13

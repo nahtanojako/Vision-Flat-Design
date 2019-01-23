@@ -1,0 +1,72 @@
+.wrapper
+  +bp(md)
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: auto
+    .about-head,
+    .contact-head
+      grid-area: 1/1/2/2
+
+    .about-content,
+    .contact-content
+      grid-area: 1/2/3/3
+
+    .team-head,
+    .msg-head
+      grid-area: 2/1/3/2
+
+  .section-head-wrap
+    position: relative
+    border-bottom: 10px solid darken($gray, 30%)
+
+    .section-head
+      color: $secondary
+      font-size: 3rem
+      margin: 0 !important
+      +bp(md)
+        +center(y)
+
+      span
+        display: block
+        
+      .stand-out
+        font-size: 4rem
+
+    i
+      right: 1rem
+      +center(y)
+      color: $secondary
+      font-size: 3rem
+      +bp(lg)
+        font-size: 5rem
+        font-weight: 700
+      
+#about
+  .about-head, .about-content, .team-head
+    padding: 2rem 1rem
+
+  .about-head
+    +bp(md)
+      border-bottom: none !important
+      border-right: 10px solid darken($gray, 30%)
+    i
+      +bp(md)
+        +transform(rotate(-90deg))
+        margin-top: -1rem
+      +bp(lg)
+        margin-top: -3rem
+      
+
+  .about-content
+    p
+      margin-bottom: 1.3rem
+
+  .team-head
+    border-bottom-color: darken($primary, 10%) !important
+    i
+      right: 2rem
+
+#about-mission
+  overflow: hidden
+  .col-md-6
+    padding: 3rem 2rem

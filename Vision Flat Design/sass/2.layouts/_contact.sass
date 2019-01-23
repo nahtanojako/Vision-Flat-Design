@@ -1,0 +1,92 @@
+#contact
+  .contact-head
+    +bp(md)
+      border-bottom: none !important
+      border-right: 10px solid darken($gray, 30%)
+
+    i
+      +bp(md)
+        +transform(rotate(-90deg))
+        margin-top: -1rem
+      +bp(lg)
+        margin-top: -3rem
+
+  .contact-content
+    background: $secondary
+    p
+      margin-bottom: 1.3rem
+
+  .msg-head
+    border-bottom-color: darken($primary, 10%) !important
+
+  .section-head
+    .stand-out
+      +bp(md)
+        font-size: 3.5rem
+
+
+  .social-media
+    margin-top: 3rem
+    ul
+      +flex(row, flex-start, center)
+      li
+
+        a
+          display: block
+          background: $black
+          width: 3.5rem
+          height: 3.3rem
+          position: relative
+          border-radius: 5px
+          &:not(last-child)
+            margin-right: 0.5rem
+          &:hover
+            background: $primary
+          i
+            +center
+            color: $white
+
+
+.contact-form
+  padding: 3rem 0
+  background: $gray-2
+  form
+    max-width: 768px
+    margin: 0 auto
+
+  +bp(md)
+    form
+      +flex(row, space-between, center)
+      .form-group:nth-child(1),
+      .form-group:nth-child(2)
+        flex-basis: 48%
+
+
+  
+#contact,
+#blog
+  .bg-secondary,
+  .bg-primary,
+  .bg-gray
+    +bp(md)
+      padding-left: 2rem
+
+  .bg-secondary 
+    +bp(md)
+      padding-right: 3rem
+
+#blog
+  .bg-secondary
+    +bp(md)
+      padding-right: 2rem !important
+      padding-left: 3rem !important
+    +bp(lg)
+      padding-left: 7rem !important
+
+  .bg-primary
+    +bp(md)
+      padding-right: 3rem !important
+      padding-left: 2rem !important
+    +bp(lg)
+      padding-right: 7rem !important
+

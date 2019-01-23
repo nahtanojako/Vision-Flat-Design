@@ -1,0 +1,50 @@
+#hero-section
+  +background(black-overlay, hero-bg)
+  height: 100vh
+  position: relative
+
+  .container
+    +center
+    padding-top: 60px
+
+  .title,
+  .tagline
+    text-transform: uppercase
+    text-align: center
+
+  .title
+    font-weight: 700
+    font-size: 3rem
+    line-height: 1
+    +bp(sm)
+      font-size: 3.3rem
+
+  .tagline
+    color: $gray
+    font-size: 1.5rem
+    letter-spacing: 1px
+
+  .hero-icon
+    text-align: center
+    i
+      font-size: 7rem
+      margin: 0.5rem 0.5rem
+      &:first-child
+        font-size: 14rem
+
+  .dots
+    +center(x)
+    bottom: 2rem
+    .dot
+      display: inline-block
+      +circle(12px)
+      border: 2px solid $white
+      background: transparent
+      margin: 0 5px
+      cursor: pointer
+      +transition(fast)
+      &:hover
+        background: $primary
+    .active
+      background: $primary
+      +circle(1.1rem)

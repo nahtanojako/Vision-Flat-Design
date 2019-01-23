@@ -1,0 +1,63 @@
+#blog
+  overflow: hidden
+  .block
+    color: $white
+    display: grid
+    grid-template-columns: 1fr 2fr
+    grid-template-rows: auto auto
+    padding-bottom: 1rem
+    overflow: hidden !important
+
+    .block-img
+      grid-area: 1/2/2/3
+
+    .block-nav
+      grid-area: 1/1/2/2
+      display: grid
+      grid-template-columns: 1fr
+      grid-template-rows: auto auto
+
+      .block-item
+        position: relative
+
+        .icon-wrap
+          width: 100%
+          text-align: center
+          +center
+          p,a
+            text-transform: uppercase
+            font-size: 2rem
+            +bp(md)
+              font-size: 1.5rem
+          p
+            color: $secondary
+          a
+            color: $white
+            &:hover
+              color: $primary
+
+          i
+            font-size: 4rem
+            +bp(md)
+            font-size: 3rem
+
+  .block-body
+    h5
+      text-transform: uppercase !important
+      font-size: 1.3rem
+      margin-bottom: 1rem
+
+  .bg-secondary
+    position: relative
+    +bp(md)
+      .btn
+        position: absolute
+        bottom: 3rem
+
+      p
+        margin-bottom: 1.3rem
+
+  .bg-primary,
+  .bg-secondary
+    padding-left: 2rem
+    padding-right: 2rem

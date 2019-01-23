@@ -1,0 +1,118 @@
+.navbar
+  background: transparent
+  padding: 2rem 1rem 0.8rem
+  +flex(row, space-between, center)
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 9999
+  +transition(fast)
+  &.fixed
+    box-shadow: 0 4px 5px rgba($black, 0.1)
+    background: $primary
+    padding-top: 0.8rem
+  &.fixed .navbar-collapse .list-item.active
+    background: $secondary
+
+  a
+    color: $white
+
+  .navbar-brand
+    +font-family(cursive)
+    font-size: 2.5rem
+    font-weight: 700
+    line-height: 1
+    +bp(md)
+      padding-left: 1.7rem
+
+  .navbar-toggler
+    width: 2.7rem
+    height: 2.2rem
+    border: 1px solid $white
+    border-radius: 5px
+    padding: 0.5rem
+    cursor: pointer
+    +transition(fast)
+    +bp(md)
+      display: none
+
+    &:hover
+      background: $secondary
+
+    &.bg-toggler
+      background: $primary
+    
+    &.bg-toggler .navbar-toggler-icon:nth-child(1)
+      +transform(rotate(45deg))
+      position: relative
+      top: 7px
+
+    &.bg-toggler .navbar-toggler-icon:nth-child(2)
+      display: none
+
+    &.bg-toggler .navbar-toggler-icon:nth-child(3)
+      +transform(rotate(-45deg))
+
+    .navbar-toggler-icon
+      height: 2px 
+      background: $white
+      +transition(fast)
+      &:not(:last-child)
+        margin-bottom: 5px
+
+  .navbar-collapse
+    padding-top: 0.5rem
+    margin-top: 1rem
+    margin-right: -1rem
+    margin-left: -1rem
+    flex-basis: calc(100% + 2rem)
+    display: none
+    background: $primary
+    
+    .list-item.active
+      background: $secondary
+      +bp(md)
+        background: $primary
+        font-weight: 700
+        color: $white
+    
+    +bp(md)
+      display: block
+      flex-basis: 83%
+      margin: 0
+      padding: 0
+      background: none
+
+    &.slideDown
+      display: block
+
+    .list-inline
+      +bp(md)
+        +flex(row, flex-end, center)
+
+    .list-item
+      +transition(fast)
+      +bp(md)
+        border-radius: 1.5rem
+        margin: 0 0.2rem
+
+      &:not(.active):hover
+        background: $gray
+        font-weight: 700
+        +bp(md)
+          border-radius: 1.5rem
+      &:not(.active):hover a
+        color: $secondary
+
+      .list-item-link
+        display: block
+        padding: 0.8rem 2rem
+        color: $gray-3
+        font-weight: 700
+        +bp(md)
+          padding: 0.5rem 1.7rem
+        
+      
+    
+
