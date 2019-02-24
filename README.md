@@ -1,3 +1,3 @@
 # Vision-Flat-Design
 
-# Responsive template for web design agency
+Responsive template for web design agency
